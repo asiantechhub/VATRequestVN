@@ -1,0 +1,45 @@
+<div class="vat-information">
+    <input type="checkbox" name="vat-information"
+           data-bind="checked: isRequireVatVisible, attr: {id: 'vat-information'}"/>
+    <label data-bind="attr: {for: 'vat-information'}">
+        <span data-bind="i18n: 'EXPORT VAT FOR ORDER'"></span>
+    </label>
+</div>
+<div class="vat-information" data-bind="fadeVisible: isRequireVatVisible">
+    <div class="vat-number">
+        <div class="title">
+            <span data-bind="i18n: 'VAT Number'"></span>
+        </div>
+        <div class="control">
+            <input type="text"  data-bind="value: vatNumber"
+                   name="vat-number" id="wk-vat-number"/>
+        </div>
+    </div>
+    <div class="vat-company">
+        <div class="title">
+            <span data-bind="i18n: 'Company'"></span>
+        </div>
+        <div class="control">
+            <input type="text"  data-bind="value: vatCompany"
+                   name="vat-company" id="wk-vat-company"/>
+        </div>
+    </div>
+    <div class="vat-address">
+        <div class="title">
+            <span data-bind="i18n: 'Company Address'"></span>
+        </div>
+        <div class="control">
+            <input type="text" name="vat-address" id="wk-vat-address"
+                   data-bind="value: vatAddress">
+        </div>
+    </div>
+    <div class="vat-save">
+        <div class="control">
+            <input type="checkbox" name="create-account-checkbox"
+                   data-bind="checked: vatSave, attr: {id: 'wk-vat-save'}"/>
+            <label data-bind="attr: {for: 'wk-vat-save'}">
+                <span data-bind="i18n: 'Save infomation for next order'"></span>
+            </label>
+        </div>
+    </div>
+</div>

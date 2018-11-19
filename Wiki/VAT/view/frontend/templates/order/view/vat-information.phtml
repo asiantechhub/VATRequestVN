@@ -1,0 +1,25 @@
+<?php
+/** @var Wiki\VAT\Block\Order\View\VatInformation $block */
+$data = $block->getVatInformation();
+$vatNumber = $data->getData('vatNumber');
+$vatCompany = $data->getData('vatCompany');
+$vatAddress = $data->getData('vatAddress');
+$vatSave = $data->getData('vatSave');
+?>
+
+<div class="box-content vat-information">
+    <?php if ($vatAddress): ?>
+        <br><strong><?php echo __('VAT Information:') ?></strong>
+        <br><span>VAT Number : <?php echo $vatNumber ?></span>
+        <br><span>Company :<?php echo $vatCompany ?></span>
+        <br><span>Company Address :<?php echo $vatAddress ?></span>
+    <?php endif; ?>
+</div>
+
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        if ($('.box-order-shipping-method').length) {
+            $('.box-order-shipping-method').append($('.vat-information'));
+        }
+    });
+</script>
